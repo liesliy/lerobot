@@ -105,9 +105,6 @@ class LingBotVAConfig(PreTrainedConfig):
     # Populated at runtime from dataset metadata by make_policy (used to build the exclude mask).
     action_feature_names: list[str] | None = None
 
-    # Opt-in: VAE-decode predicted video latents to ``self.last_predicted_frames`` for saving MP4s.
-    save_predicted_video: bool = False
-
     # Normalization: IDENTITY here; images are scaled + VAE-encoded and actions are
     # quantile-(un)normalized inside the policy / dedicated processor steps.
     normalization_mapping: dict[str, NormalizationMode] = field(
